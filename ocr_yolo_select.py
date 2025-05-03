@@ -10,24 +10,21 @@ def keep_black_pixels(image_path, output_path):
         print("错误：图像加载失败！")
         return
 
-    # 2. 判断是否为3通道（RGB）或4通道（RGBA）
-    if img.shape[2] == 4:  # 带透明通道的PNG
-        b, g, r, a = cv2.split(img)
-    else:  # 普通RGB/BGR
-        b, g, r = cv2.split(img)
-        a = None
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # 3. 创建黑色像素的掩膜（纯黑色条件：R=G=B=0）
-    black_mask = (b <= 90) & (g <= 90) & (r <= 60)
+    # 中值滤波去噪
+    gray = cv2.medianBlur(gray, 3)
 
-    # 4. 生成结果图像（非黑色区域设为白色）
-    result = np.ones_like(img) * 255  # 全白背景
-    result[black_mask] = img[black_mask]  # 保留黑色像素
+    # 二值化处理
+    _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+
+    # 将单通道二值图像转换为3通道RGB图像
+    binary_rgb = cv2.cvtColor(binary, cv2.COLOR_GRAY2BGR)
 
     # 5. 保存结果
-    cv2.imwrite(output_path, result)
+    cv2.imwrite(output_path, binary_rgb)
     print(f"处理完成，结果已保存至：{output_path}")
 
 
 # 使用示例
-keep_black_pixels("IMG_8363.JPG", "output2.png")
+keep_black_pixels("IMG_8364.JPG", "output3.png")
