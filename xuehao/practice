@@ -1,0 +1,10 @@
+from ultralytics import YOLO
+a1=YOLO('yolov8n.pt')
+a1.train(
+    data='data.yaml',
+    epochs=100,
+    imgsz=640,
+    batch=16,
+    device='cpu'
+)
+print('finish')

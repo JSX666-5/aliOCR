@@ -1,0 +1,5 @@
+path: D:\aliOCR\program\xun2
+train: images/train
+val: images/val
+nc: 6
+names: ['1','2','3','4','5','6']

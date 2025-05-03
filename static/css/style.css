@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 40px;
+}
+
+.upload-panel {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.upload-panel h2 {
+    color: #202124;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.upload-box {
+    border: 2px dashed #dadce0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    min-height: 200px;
+}
+
+.upload-input {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.preview {
+    margin: 15px 0;
+}
+
+.preview img {
+    max-width: 300px;
+    max-height: 200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.results {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin-top: 15px;
+    min-height: 50px;
+}
+
+.upload-box:hover {
+    border-color: #1a73e8;
+    background: #f8fbff;
+}
+
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: "处理中...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.9);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #1a73e8;
+    font-weight: bold;
+}

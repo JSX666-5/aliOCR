@@ -1,0 +1,1 @@
+python ocr_yolo_program.py program\1540.JPG

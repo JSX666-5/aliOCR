@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>试卷批改系统</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>试卷批改系统</h1>
+
+        <!-- 学号识别面板 -->
+        <div class="upload-panel">
+            <h2>学号识别</h2>
+            <div class="upload-box" id="no-box">
+                <input type="file" accept="image/*" class="upload-input" data-type="no">
+                <div class="preview"></div>
+                <div class="results"></div>
+            </div>
+        </div>
+
+        <!-- 选择题识别面板 -->
+        <div class="upload-panel">
+            <h2>选择题答案</h2>
+            <div class="upload-box" id="select-box">
+                <input type="file" accept="image/*" class="upload-input" data-type="select">
+                <div class="preview"></div>
+                <div class="results"></div>
+            </div>
+        </div>
+
+        <!-- 程序题识别面板 -->
+        <div class="upload-panel">
+            <h2>程序题答案</h2>
+            <div class="upload-box" id="program-box">
+                <input type="file" accept="image/*" class="upload-input" data-type="program">
+                <div class="preview"></div>
+                <div class="results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
