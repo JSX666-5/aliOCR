@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="yolo" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="yolo" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="aliOcr" project-jdk-type="Python SDK" />
 </project>
